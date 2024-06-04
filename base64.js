@@ -186,7 +186,7 @@ async function process(){
     // Display results
     document.getElementById('encoded').innerText = encoded;
     document.getElementById('decoded').innerText = decoded;
-    document.getElementById('time').innerText = elapsed.toString() + 'ms';
+    document.getElementById('time').value = elapsed.toString() + 'ms';
 }
 
 document.getElementById('process').addEventListener('click', process);
