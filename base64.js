@@ -147,6 +147,8 @@ async function benchmark(){
 
     // Insert results into table
     const table = document.getElementById('benchmarkResults');
+    // Clear table
+    table.innerHTML = '';
     for (let i = 0; i < encodersAndDecoders.length; i++) {
         const row = table.insertRow(-1);
         const cell1 = row.insertCell(0);
