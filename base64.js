@@ -160,6 +160,7 @@ async function process(){
 
     let encoded, decoded;
     console.log('Method: ', method);
+    const now = performance.now();
     switch (method) {
         case 'encode1':
             encoded = encode1(input);
@@ -180,10 +181,12 @@ async function process(){
         default:
             console.error('Invalid method');
     }
+    const elapsed = performance.now() - now;
 
     // Display results
     document.getElementById('encoded').innerText = encoded;
     document.getElementById('decoded').innerText = decoded;
+    document.getElementById('time').innerText = elapsed.toString() + 'ms';
 }
 
 document.getElementById('process').addEventListener('click', process);
