@@ -4,16 +4,6 @@
 * @param {string} input
 * @returns {string}
 */
-export function encode4(input: string): string;
-/**
-* @param {string} input
-* @returns {string}
-*/
-export function decode4(input: string): string;
-/**
-* @param {string} input
-* @returns {string}
-*/
 export function encode3(input: string): string;
 /**
 * @param {string} input
@@ -24,23 +14,21 @@ export function decode3(input: string): string;
 * @param {string} input
 * @returns {string}
 */
-export function encode5(input: string): string;
+export function encode4(input: string): string;
 /**
 * @param {string} input
 * @returns {string}
 */
-export function decode5(input: string): string;
+export function decode4(input: string): string;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly encode4: (a: number, b: number, c: number) => void;
-  readonly decode4: (a: number, b: number, c: number) => void;
   readonly encode3: (a: number, b: number, c: number) => void;
   readonly decode3: (a: number, b: number, c: number) => void;
-  readonly encode5: (a: number, b: number, c: number) => void;
-  readonly decode5: (a: number, b: number, c: number) => void;
+  readonly encode4: (a: number, b: number, c: number) => void;
+  readonly decode4: (a: number, b: number, c: number) => void;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;

@@ -1,8 +1,6 @@
 use wasm_bindgen::prelude::*;
 use base64::prelude::*;
 
-mod base64cr;
-
 #[wasm_bindgen]
 pub fn encode3(input: &str) -> String {
    BASE64_STANDARD.encode(input)
@@ -23,12 +21,12 @@ pub fn decode3(input: &str) -> Result<String, JsValue> {
 
 
 #[wasm_bindgen]
-pub fn encode5(input: &str) -> String {
+pub fn encode4(input: &str) -> String {
     fast32::base64::RFC4648.encode(input.as_ref())
 }
 
 #[wasm_bindgen]
-pub fn decode5(input: &str) -> Result<String, JsValue> {
+pub fn decode4(input: &str) -> Result<String, JsValue> {
     match fast32::base64::RFC4648.decode(input.as_ref()) {
         Ok(s) => {
             match String::from_utf8(s) {
