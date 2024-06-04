@@ -67,7 +67,7 @@ function decode2(base64) {
 /*
 
  */
-import init, { encode3, decode3, encode4, decode4, encode5, decode5 } from './b64wasm/pkg/b64wasm.js';
+import init, { encode3, decode3, encode4, decode4 } from './b64wasm/pkg/b64wasm.js';
 
 async function loadWasmModule() {
     await init();
@@ -106,9 +106,8 @@ async function benchmark(){
     const encodersAndDecoders = [
         {name: 'Native', encode: encode1, decode: decode1},
         {name: 'TextEncoder', encode: encode2, decode: decode2},
-        {name: 'Wasm', encode: encode3, decode: decode3},
-        {name: 'Wasm 2', encode: encode4, decode: decode4},
-        {name: 'Wasm 3', encode: encode5, decode: decode5},
+        {name: 'Wasm (base64)', encode: encode3, decode: decode3},
+        {name: 'Wasm (fast32)', encode: encode4, decode: decode4},
     ];
 
 
@@ -177,10 +176,6 @@ async function process(){
         case 'encode4':
             encoded = encode4(input);
             decoded = decode4(encoded);
-            break;
-        case 'encode5':
-            encoded = encode5(input);
-            decoded = decode5(encoded);
             break;
         default:
             console.error('Invalid method');
