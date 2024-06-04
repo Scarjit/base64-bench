@@ -76,6 +76,20 @@ async function loadWasmModule() {
 // BENCHMARK
 
 function bench(encoder, decoder, iterations){
+    // Warmup by running once
+    for (const input of benchInputs) {
+        const encoded = encoder(input);
+        const decoded = decoder(encoded);
+        if (input !== decoded) {
+            console.log("Input: ", input);
+            console.log("Encoded: ", encoded);
+            console.log("Decoded: ", decoded);
+            // Display decoded as hex for better debugging
+            console.log("Decoded hex: ", Array.from(decoded).map(c => c.charCodeAt(0).toString(16)).join(' '));
+            throw new Error('Invalid decoding');
+        }
+    }
+
     const nowHighRes = performance.now();
     for (let i = 0; i < iterations; i++) {
         for (const input of benchInputs) {
