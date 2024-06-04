@@ -1,0 +1,14 @@
+{
+  "name": "b64wasm",
+  "version": "0.1.0",
+  "files": [
+    "b64wasm_bg.wasm",
+    "b64wasm.js",
+    "b64wasm.d.ts"
+  ],
+  "module": "b64wasm.js",
+  "types": "b64wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

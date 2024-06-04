@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Base64 Encoder/Decoder</title>
+    <script src="base64.js" charset="utf-8" type="module" async></script>
+</head>
+<body>
+<h1>Benchmark</h1>
+<div>
+    <label for="iterations">Iterations: </label>
+    <input type="number" id="iterations" value="100" min="1" max="10000">
+    <button id="run">Run</button>
+</div>
+<table id="benchmarkResults" style="display: none;">
+    <tr>
+        <th>Method</th>
+        <th>Time (ms)</th>
+        <th>Speed Increase</th>
+    </tr>
+</table>
+<!-- divider line here -->
+<hr>
+<h1>Base64 Encoder/Decoder</h1>
+<div>
+    <div>
+        <!-- Allow the user to try out custom data -->
+        <label for="input">Input: </label>
+        <input type="text" id="input" value="Hello, World!">
+        <!-- dropdown with available methods (encode1 to encode5) -->
+        <label for="method">Method: </label>
+        <select id="method">
+            <option value="encode1">Native</option>
+            <option value="encode2">TextEncoder</option>
+            <option value="encode3">Wasm</option>
+            <option value="encode4">Wasm 2</option>
+            <option value="encode5">Wasm 3</option>
+        </select>
+        <!-- button to encode the input -->
+        <button id="process">Encode & Decode</button>
+    </div>
+    <br>
+    <div>
+        <!-- Text fields for the output (these are not input fields), make them large by default -->
+        <label for="encoded">Encoded: </label>
+        <textarea id="encoded" readonly style="width: 100%; height: 100px;"></textarea>
+
+        <label for="decoded">Decoded: </label>
+        <textarea id="decoded" readonly style="width: 100%; height: 100px;"></textarea>
+
+    </div>
+</div>
+</body>
+</html>

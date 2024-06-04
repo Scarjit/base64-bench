@@ -1,0 +1,12 @@
+[package]
+name = "b64wasm"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.92"
+base64 = "0.22.0"
+fast32 = "1.0.2"
