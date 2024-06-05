@@ -149,6 +149,15 @@ async function benchmark(){
     const table = document.getElementById('benchmarkResults');
     // Clear table
     table.innerHTML = '';
+    // Add headers
+    const header = table.createTHead();
+    const headerRow = header.insertRow(0);
+    const headerCell1 = headerRow.insertCell(0);
+    const headerCell2 = headerRow.insertCell(1);
+    const headerCell3 = headerRow.insertCell(2);
+    headerCell1.innerHTML = 'Method';
+    headerCell2.innerHTML = 'Time (ms)';
+    headerCell3.innerHTML = 'Speed increase';
     for (let i = 0; i < encodersAndDecoders.length; i++) {
         const row = table.insertRow(-1);
         const cell1 = row.insertCell(0);
